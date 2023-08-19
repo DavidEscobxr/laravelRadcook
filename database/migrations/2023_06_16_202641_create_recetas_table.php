@@ -15,8 +15,17 @@ class CreateRecetasTable extends Migration
     {
         Schema::create('recetas', function (Blueprint $table) {
             $table->id();
-            $table->text('descripcion');
+            $table->string('description',100);
             $table->timestamps();
+            
+
+        $table->unsignedBigInteger('id_ingredientes')->unique();
+        
+        $table ->foreign('id_ingredientes')
+        ->references('id')
+        ->on('ingredientes')
+        ->onDelete('cascade')
+        ->onUpdate('cascade');
         });
     }
 
@@ -29,4 +38,7 @@ class CreateRecetasTable extends Migration
     {
         Schema::dropIfExists('recetas');
     }
+    
+
+
 }

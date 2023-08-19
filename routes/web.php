@@ -3,6 +3,7 @@
 use App\Http\Controllers\CursoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\furrosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +26,7 @@ Route::post('cursos', [CursoController::class,'store'])->name('cursos.store');
 
 Route::get('cursos/create',[CursoController::class,'create']);
 
-//Route::get('cursos/{curso}',[CursoController::class,'Show']);
+
+Route::get('furros/create',[furrosController::class,'create']);
+
+Route::post('furros', [furrosController::class,'store'])->name('furros.store');

@@ -1,6 +1,6 @@
 @extends('layouts.plantilla')
 
-@section('content')
+@section('cuerpo')
     
 <form action="procesar_formulario.php" method="POST">
 
